@@ -1,0 +1,10 @@
+{
+  "firstName": "Sapna",
+  "lastName": "ABC",
+  "address": {
+    "city": "Nanded",
+    "zip": "431513",
+    "state": "MH"
+  },
+  "phoneNumber": "7030493048"
+}
