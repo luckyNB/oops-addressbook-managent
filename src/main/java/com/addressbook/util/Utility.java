@@ -7,28 +7,24 @@ import com.google.gson.GsonBuilder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Utility {
     public static final String FilePath = "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json";
     List<Person> personList = new ArrayList<>();
     Gson gson = new Gson();
     BufferedReader br = new BufferedReader(new FileReader(FilePath));
-
     //convert the json string back to object
     Person[] personDetails = gson.fromJson(br, Person[].class);
-
-
 
     public Utility() throws FileNotFoundException {
     }
 
 
-    public  boolean writingPersonDetailsIntoJsonFile(Person person ) throws FileNotFoundException {
+    public boolean writingPersonDetailsIntoJsonFile(Person person) throws FileNotFoundException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-       readList();
+        readList();
         personList.add(person);
-      //  personList.add(persons);
+        //  personList.add(persons);
         String json = gson.toJson(personList);
         FileWriter fileWriter = null;
         try {
@@ -44,7 +40,7 @@ public class Utility {
     }
 
 
-    public  boolean readList() throws FileNotFoundException {
+    public boolean readList() throws FileNotFoundException {
 
         for (int index = 0; index < personDetails.length; index++) {
             personList.add(personDetails[index]);

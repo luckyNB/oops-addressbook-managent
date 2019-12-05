@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class AddressBookManager implements Manager {
     Utility utility;
-
     {
         try {
             utility = new Utility();
@@ -19,20 +18,14 @@ public class AddressBookManager implements Manager {
     }
 
     @Override
-    public boolean addPerson(Person person, String path)  {
+    public boolean addPerson(Person person, String path) {
 
         try {
             utility.writingPersonDetailsIntoJsonFile(person
-                    );
+            );
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return true;
-    }
-
-    @Override
-    public boolean editPerson() throws IOException {
-
         return true;
     }
 
