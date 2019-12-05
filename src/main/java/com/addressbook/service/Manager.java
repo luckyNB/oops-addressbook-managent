@@ -11,5 +11,6 @@ public interface Manager {
 
     boolean addPerson(Person person,String filePath) throws FileNotFoundException;
     boolean editPerson(Person person,String mobileNumber) throws FileNotFoundException;
+    boolean deletePerson(String mobileNumber) throws FileNotFoundException;
 
 }
