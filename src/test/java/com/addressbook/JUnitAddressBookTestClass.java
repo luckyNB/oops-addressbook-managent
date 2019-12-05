@@ -45,4 +45,11 @@ public class JUnitAddressBookTestClass {
         boolean result = manager.sortingAddressBook("zip");
         Assert.assertTrue(true);
     }
+
+    @Test
+    public void givenListOfAddressBook_When_PrintedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
+        boolean result=manager.printingAddressBook();
+        Assert.assertTrue(result);
+
+    }
 }

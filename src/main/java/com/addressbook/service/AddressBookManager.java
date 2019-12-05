@@ -95,5 +95,12 @@ public class AddressBookManager implements Manager {
         return true;
     }
 
+    @Override
+    public boolean printingAddressBook() throws FileNotFoundException {
+        List<Person> personList = utility.readAllPersonsAddressList();
+        personList.forEach(System.out::println);
+        return true;
+    }
+
 
 }

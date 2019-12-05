@@ -14,4 +14,5 @@ public interface Manager {
     boolean deletePerson(String mobileNumber) throws FileNotFoundException;
     boolean sortingAddressBook(String sortingFieldName) throws FileNotFoundException;
 
+    boolean printingAddressBook() throws FileNotFoundException;
 }
