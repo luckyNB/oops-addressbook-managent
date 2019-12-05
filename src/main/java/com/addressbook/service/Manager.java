@@ -10,6 +10,6 @@ import java.util.List;
 public interface Manager {
 
     boolean addPerson(Person person,String filePath) throws FileNotFoundException;
-
+    boolean editPerson(Person person,String mobileNumber) throws FileNotFoundException;
 
 }

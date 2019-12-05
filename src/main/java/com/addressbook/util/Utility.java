@@ -39,6 +39,22 @@ public class Utility {
         return false;
     }
 
+    public boolean writingPersonDetailsIntoJsonFile(List<Person> personList) throws FileNotFoundException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(personList);
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(FilePath);
+            fileWriter.write(json);
+            fileWriter.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
 
     public boolean readList() throws FileNotFoundException {
 
@@ -48,5 +64,15 @@ public class Utility {
         }
         return true;
     }
+
+    public List<Person> readAllPersonsAddressList() throws FileNotFoundException {
+
+        for (int index = 0; index < personDetails.length; index++) {
+            personList.add(personDetails[index]);
+            System.out.println(personDetails[index]);
+        }
+        return personList;
+    }
+
 
 }

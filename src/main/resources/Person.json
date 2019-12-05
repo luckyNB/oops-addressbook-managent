@@ -18,5 +18,55 @@
       "state": "MB"
     },
     "phoneNumber": "795465621645"
+  },
+  {
+    "firstName": "Vijay",
+    "lastName": "Salaskar",
+    "address": {
+      "city": "A\u0027Bad",
+      "zip": "098765434",
+      "state": "RJ"
+    },
+    "phoneNumber": "784544551258"
+  },
+  {
+    "firstName": "dta",
+    "lastName": "sao",
+    "address": {
+      "city": "Mumbai  ",
+      "zip": "100030",
+      "state": "MB"
+    },
+    "phoneNumber": "795465621645"
+  },
+  {
+    "firstName": "dta",
+    "lastName": "sao",
+    "address": {
+      "city": "pune  ",
+      "zip": "100030",
+      "state": "MB"
+    },
+    "phoneNumber": "795465621645"
+  },
+  {
+    "firstName": "Samir",
+    "lastName": "Kadam",
+    "address": {
+      "city": "Raigad",
+      "zip": "798456",
+      "state": "MH"
+    },
+    "phoneNumber": "784544551258"
+  },
+  {
+    "firstName": "Vijay",
+    "lastName": "Salaskar",
+    "address": {
+      "city": "A\u0027Bad",
+      "zip": "098765434",
+      "state": "RJ"
+    },
+    "phoneNumber": "784544551258"
   }
 ]
