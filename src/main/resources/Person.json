@@ -1,5 +1,55 @@
 [
   {
+    "firstName": "Abhi",
+    "lastName": "Raj",
+    "address": {
+      "city": "Akola  ",
+      "zip": "121212",
+      "state": "J\u0026K"
+    },
+    "phoneNumber": "78787889565"
+  },
+  {
+    "firstName": "Mahesh",
+    "lastName": "Sakhare",
+    "address": {
+      "city": "Beed",
+      "zip": "252525",
+      "state": "Pakistan"
+    },
+    "phoneNumber": "951252265"
+  },
+  {
+    "firstName": "Satya",
+    "lastName": "Sakhare",
+    "address": {
+      "city": "Beed",
+      "zip": "252525",
+      "state": "Pakistan"
+    },
+    "phoneNumber": "4324324234"
+  },
+  {
+    "firstName": "Sunil",
+    "lastName": "Salunkhe",
+    "address": {
+      "city": "Sangli  ",
+      "zip": "7585861",
+      "state": "Goa"
+    },
+    "phoneNumber": "585858585858"
+  },
+  {
+    "firstName": "Vijay",
+    "lastName": "Salaskar",
+    "address": {
+      "city": "A\u0027Bad",
+      "zip": "098765434",
+      "state": "RJ"
+    },
+    "phoneNumber": "784544551258"
+  },
+  {
     "firstName": "Vijay",
     "lastName": "Salaskar",
     "address": {
@@ -18,15 +68,5 @@
       "state": "MB"
     },
     "phoneNumber": "795465621645"
-  },
-  {
-    "firstName": "Vijay",
-    "lastName": "Salaskar",
-    "address": {
-      "city": "A\u0027Bad",
-      "zip": "098765434",
-      "state": "RJ"
-    },
-    "phoneNumber": "784544551258"
   }
 ]

@@ -4,6 +4,9 @@ import com.addressbook.model.Person;
 import com.addressbook.util.Utility;
 
 import java.io.FileNotFoundException;
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class AddressBookManager implements Manager {
@@ -66,6 +69,30 @@ public class AddressBookManager implements Manager {
         if (deletedFlag == 1)
             return true;
         return false;
+    }
+
+    @Override
+    public boolean sortingAddressByFirstName(String fieldName) throws FileNotFoundException {
+        List<Person> personList = utility.readAllPersonsAddressList();
+        int sortedFlag = 0;
+        Collections.sort(personList, new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                try {
+                    Field stateCensusField = Person.class.getDeclaredField(fieldName);
+                    stateCensusField.setAccessible(true);
+                    Comparable stateCensusFieldValue1 = (Comparable) stateCensusField.get(o1);
+                    Comparable stateCensusFieldValue2 = (Comparable) stateCensusField.get(o2);
+                    return stateCensusFieldValue1.compareTo(stateCensusFieldValue2);
+                } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
+                    e.printStackTrace();
+                    // when proper field is not entered sorting or any exception occurs
+                    return 0;
+                }
+            }
+        });
+        utility.writingPersonDetailsIntoJsonFile(personList);
+        return true;
     }
 
 

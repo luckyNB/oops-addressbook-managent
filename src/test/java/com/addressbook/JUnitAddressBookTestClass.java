@@ -14,8 +14,8 @@ public class JUnitAddressBookTestClass {
 
     @Test
     public void givenPersonInFo_When_WrittenToJson_Should_ReturnTrue() throws FileNotFoundException {
-        Address address = new Address("Satara  ", "758586", "Maharashtra");
-        Person person = new Person("Rohit", "Ghorpade", address, "888881646535");
+        Address address = new Address("Beed", "252525", "Pakistan");
+        Person person = new Person("Satya", "Sakhare", address, "4324324234");
         boolean result = manager.addPerson(person, "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json");
         Assert.assertTrue(result);
     }
@@ -31,6 +31,12 @@ public class JUnitAddressBookTestClass {
     @Test
     public void givenMobileNumber_WhenPresent_Should_RemoveFromAddressBook() throws FileNotFoundException {
         boolean result = manager.deletePerson("795465621645");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenSortingParameter_WhenSortedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
+        boolean result = manager.sortingAddressByFirstName("firstName");
         Assert.assertTrue(result);
     }
 }
