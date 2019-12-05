@@ -33,8 +33,6 @@ public class Person {
         this.lastName = lastName;
     }
 
-
-
     public String getPhoneNumber() {
         return phoneNumber;
     }

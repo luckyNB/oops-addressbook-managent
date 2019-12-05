@@ -22,7 +22,6 @@ public class AddressBookManager implements Manager {
 
     @Override
     public boolean addPerson(Person person, String path) {
-
         try {
             utility.writingPersonDetailsIntoJsonFile(person
             );
@@ -38,10 +37,11 @@ public class AddressBookManager implements Manager {
         List<Person> personList = utility.readAllPersonsAddressList();
         for (Person editingPerson : personList) {
             if (editingPerson.getPhoneNumber().equals(mobileNo)) {
-                //editingPerson.setAddress(person.getAddress());
                 editingPerson.setFirstName(person.getFirstName());
                 editingPerson.setLastName(person.getLastName());
                 editingPerson.setPhoneNumber(person.getPhoneNumber());
+                editingPerson.setCity(person.getCity());
+                editingPerson.setZip(person.getZip());
                 personList.add(editingPerson);
                 utility.writingPersonDetailsIntoJsonFile(personList);
                 flag = 1;
@@ -101,6 +101,4 @@ public class AddressBookManager implements Manager {
         personList.forEach(System.out::println);
         return true;
     }
-
-
 }
