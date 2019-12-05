@@ -1,7 +1,9 @@
 package com.addressbook.model;
 
 public class Address {
+
     private String city;
+
     private String zip;
     private String state;
 

@@ -1,62 +1,56 @@
 package com.addressbook.util;
 
 import com.addressbook.model.Person;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Iterator;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Utility {
-    public static Scanner scanner = new Scanner(System.in);
+    public static final String FilePath = "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json";
+    List<Person> personList = new ArrayList<>();
+    Gson gson = new Gson();
+    BufferedReader br = new BufferedReader(new FileReader(FilePath));
 
-    public static Integer getIntegerValue(String message) {
-        return (Integer.parseInt(scanner.nextLine()));
+    //convert the json string back to object
+    Person[] personDetails = gson.fromJson(br, Person[].class);
+
+
+
+    public Utility() throws FileNotFoundException {
     }
 
-    public static String getStringValue(String message) {
-        return scanner.nextLine();
-    }
 
-    public static boolean writingPersonDetailsIntoJsonFile(Person person, String filePath) {
+    public  boolean writingPersonDetailsIntoJsonFile(Person person ) throws FileNotFoundException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(person);
+       readList();
+        personList.add(person);
+      //  personList.add(persons);
+        String json = gson.toJson(personList);
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(filePath);
+            fileWriter = new FileWriter(FilePath);
             fileWriter.write(json);
             fileWriter.close();
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return true;
+
+        return false;
     }
 
-    public static JsonNode readingJsonFile() throws IOException {
 
-//read json file data to String
-        byte[] jsonData = Files.readAllBytes(Paths.get("/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json"));
+    public  boolean readList() throws FileNotFoundException {
 
-//create ObjectMapper instance
-        ObjectMapper objectMapper = new ObjectMapper();
-
-//read JSON like DOM Parser
-        JsonNode rootNode = objectMapper.readTree(jsonData);
-        JsonNode idNode = rootNode.path("firstName");
-        System.out.println("Person Details = " + rootNode);
-
-        JsonNode phoneNosNode = rootNode.path("firstName");
-        Iterator<JsonNode> elements = phoneNosNode.elements();
-        while (elements.hasNext()) {
-            JsonNode phone = elements.next();
+        for (int index = 0; index < personDetails.length; index++) {
+            personList.add(personDetails[index]);
+            System.out.println(personDetails[index]);
         }
-        return rootNode;
+        return true;
     }
 
 }

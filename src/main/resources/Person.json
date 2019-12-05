@@ -1,10 +1,22 @@
-{
-  "firstName": "Sapna",
-  "lastName": "ABC",
-  "address": {
-    "city": "Nanded",
-    "zip": "431513",
-    "state": "MH"
+[
+  {
+    "firstName": "dta",
+    "lastName": "sao",
+    "address": {
+      "city": "Mumbai  ",
+      "zip": "100030",
+      "state": "MB"
+    },
+    "phoneNumber": "795465621645"
   },
-  "phoneNumber": "7030493048"
-}
+  {
+    "firstName": "dta",
+    "lastName": "sao",
+    "address": {
+      "city": "pune  ",
+      "zip": "100030",
+      "state": "MB"
+    },
+    "phoneNumber": "795465621645"
+  }
+]

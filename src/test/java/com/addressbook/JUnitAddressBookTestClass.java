@@ -4,27 +4,25 @@ import com.addressbook.model.Address;
 import com.addressbook.model.Person;
 import com.addressbook.service.AddressBookManager;
 import com.addressbook.service.Manager;
+import com.google.gson.stream.MalformedJsonException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class JUnitAddressBookTestClass {
     Manager manager = new AddressBookManager();
 
     @Test
-    public void givenPersonInFo_When_WrittenToJson_Should_ReturnTrue() {
-        Address address = new Address("Nanded", "431513", "MH");
-        Person person = new Person("Sapna", "ABC", address, "7030493048");
+    public void givenPersonInFo_When_WrittenToJson_Should_ReturnTrue() throws FileNotFoundException {
+        Address address = new Address("pune  ", "100030", "MB");
+        Person person = new Person("dta", "sao", address, "795465621645");
         Manager manager = new AddressBookManager();
         boolean result = manager.addPerson(person, "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json");
         Assert.assertEquals(true, result);
 
     }
 
-    @Test
-    public void givenPersonInFoFile_When_ReadToJson_Should_ReturnTrue() throws IOException {
-        boolean result=manager.editPerson();
 
-    }
 }
