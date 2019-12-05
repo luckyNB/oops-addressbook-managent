@@ -3,14 +3,18 @@ package com.addressbook.model;
 public class Person {
     private String firstName;
     private String lastName;
-    private Address address;
     private String phoneNumber;
+    private String city;
+    private String zip;
+    private String state;
 
-    public Person(String firstName, String lastName, Address address, String phoneNumber) {
+    public Person(String firstName, String lastName, String phoneNumber, String city, String zip, String state) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
         this.phoneNumber = phoneNumber;
+        this.city = city;
+        this.zip = zip;
+        this.state = state;
     }
 
     public String getFirstName() {
@@ -29,13 +33,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Address getAddress() {
-        return address;
-    }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -45,13 +43,39 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", address=" + address +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", city='" + city + '\'' +
+                ", zip='" + zip + '\'' +
+                ", state='" + state + '\'' +
                 '}';
     }
 }

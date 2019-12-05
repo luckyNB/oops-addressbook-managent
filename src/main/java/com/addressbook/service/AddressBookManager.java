@@ -38,7 +38,7 @@ public class AddressBookManager implements Manager {
         List<Person> personList = utility.readAllPersonsAddressList();
         for (Person editingPerson : personList) {
             if (editingPerson.getPhoneNumber().equals(mobileNo)) {
-                editingPerson.setAddress(person.getAddress());
+                //editingPerson.setAddress(person.getAddress());
                 editingPerson.setFirstName(person.getFirstName());
                 editingPerson.setLastName(person.getLastName());
                 editingPerson.setPhoneNumber(person.getPhoneNumber());
@@ -72,7 +72,7 @@ public class AddressBookManager implements Manager {
     }
 
     @Override
-    public boolean sortingAddressByFirstName(String fieldName) throws FileNotFoundException {
+    public boolean sortingAddressBook(String fieldName) throws FileNotFoundException {
         List<Person> personList = utility.readAllPersonsAddressList();
         int sortedFlag = 0;
         Collections.sort(personList, new Comparator<Person>() {

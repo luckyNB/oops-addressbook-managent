@@ -1,6 +1,5 @@
 package com.addressbook;
 
-import com.addressbook.model.Address;
 import com.addressbook.model.Person;
 import com.addressbook.service.AddressBookManager;
 import com.addressbook.service.Manager;
@@ -14,16 +13,17 @@ public class JUnitAddressBookTestClass {
 
     @Test
     public void givenPersonInFo_When_WrittenToJson_Should_ReturnTrue() throws FileNotFoundException {
-        Address address = new Address("Beed", "252525", "Pakistan");
-        Person person = new Person("Satya", "Sakhare", address, "4324324234");
+
+        Person person = new Person("Tushar", "Raj", "1030493048", "Osmnanabad", "8552", "MH");
+
         boolean result = manager.addPerson(person, "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json");
         Assert.assertTrue(result);
     }
 
     @Test
     public void givenPersonInfo_When_EdittedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
-        Address address = new Address("A'Bad", "098765434", "RJ");
-        Person person = new Person("Vijay", "Salaskar", address, "784544551258");
+        Person person = new Person("Raja", "Bhosale", "885956585", "Nanded", "123123", "MH");
+
         boolean result = manager.editPerson(person, "784544551258");
         Assert.assertTrue(result);
     }
@@ -35,8 +35,14 @@ public class JUnitAddressBookTestClass {
     }
 
     @Test
-    public void givenSortingParameter_WhenSortedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
-        boolean result = manager.sortingAddressByFirstName("firstName");
+    public void givenSortingFieldParameter_AsFirstName_WhenSortedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
+        boolean result = manager.sortingAddressBook("firstName");
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenSortingFieldParameter_AsZIPCode_WhenSortedSuccessfully_Should_ReturnTrue() throws FileNotFoundException {
+        boolean result = manager.sortingAddressBook("zip");
+        Assert.assertTrue(true);
     }
 }

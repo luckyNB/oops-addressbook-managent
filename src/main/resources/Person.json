@@ -1,72 +1,42 @@
 [
   {
-    "firstName": "Abhi",
+    "firstName": "Shiva",
     "lastName": "Raj",
-    "address": {
-      "city": "Akola  ",
-      "zip": "121212",
-      "state": "J\u0026K"
-    },
-    "phoneNumber": "78787889565"
+    "phoneNumber": "9030493048",
+    "city": "Washim",
+    "zip": "13213",
+    "state": "MH"
   },
   {
-    "firstName": "Mahesh",
-    "lastName": "Sakhare",
-    "address": {
-      "city": "Beed",
-      "zip": "252525",
-      "state": "Pakistan"
-    },
-    "phoneNumber": "951252265"
+    "firstName": "Laxman",
+    "lastName": "Bhosale",
+    "phoneNumber": "7030493048",
+    "city": "7030493048",
+    "zip": "431513",
+    "state": "MH"
+  },
+  {
+    "firstName": "Laxman",
+    "lastName": "Bhosale",
+    "phoneNumber": "7030493048",
+    "city": "7030493048",
+    "zip": "431513",
+    "state": "MH"
   },
   {
     "firstName": "Satya",
-    "lastName": "Sakhare",
-    "address": {
-      "city": "Beed",
-      "zip": "252525",
-      "state": "Pakistan"
-    },
-    "phoneNumber": "4324324234"
+    "lastName": "Raj",
+    "phoneNumber": "8030493048",
+    "city": "Washim",
+    "zip": "789794",
+    "state": "MH"
   },
   {
-    "firstName": "Sunil",
-    "lastName": "Salunkhe",
-    "address": {
-      "city": "Sangli  ",
-      "zip": "7585861",
-      "state": "Goa"
-    },
-    "phoneNumber": "585858585858"
-  },
-  {
-    "firstName": "Vijay",
-    "lastName": "Salaskar",
-    "address": {
-      "city": "A\u0027Bad",
-      "zip": "098765434",
-      "state": "RJ"
-    },
-    "phoneNumber": "784544551258"
-  },
-  {
-    "firstName": "Vijay",
-    "lastName": "Salaskar",
-    "address": {
-      "city": "A\u0027Bad",
-      "zip": "098765434",
-      "state": "RJ"
-    },
-    "phoneNumber": "784544551258"
-  },
-  {
-    "firstName": "dta",
-    "lastName": "sao",
-    "address": {
-      "city": "pune  ",
-      "zip": "100030",
-      "state": "MB"
-    },
-    "phoneNumber": "795465621645"
+    "firstName": "Tushar",
+    "lastName": "Raj",
+    "phoneNumber": "1030493048",
+    "city": "Osmnanabad",
+    "zip": "8552",
+    "state": "MH"
   }
 ]
