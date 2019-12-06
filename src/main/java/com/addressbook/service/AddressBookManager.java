@@ -108,7 +108,7 @@ public class AddressBookManager implements Manager {
     @Override
     public boolean createEmptyFile(String fileName) throws AddressBookException {
         try {
-            File file = new File(Utility.resouecePath + fileName + ".json");
+            File file = new File(Utility.resourcePath + fileName + ".json");
             if (file.createNewFile()) {
                 return true;
             } else {
@@ -118,5 +118,16 @@ public class AddressBookManager implements Manager {
             throw new AddressBookException("Problem occured while creating file");
         }
 
+    }
+
+    @Override
+    public boolean openingExistingFile(String fileName) {
+        File file = new File(Utility.resourcePath + fileName);
+
+        if (file.exists()) {
+            Utility.readingAddressBook(Utility.resourcePath + fileName);
+            return true;
+        }
+        return false;
     }
 }

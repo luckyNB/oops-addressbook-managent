@@ -58,4 +58,10 @@ public class JUnitAddressBookTestClass {
         boolean result=manager.createEmptyFile("Laxman" );
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenFileName_WhenExist_Should_Open_And_ReturnTrue() {
+        boolean result=manager.openingExistingFile("Person.json");
+        Assert.assertTrue(result);
+    }
 }

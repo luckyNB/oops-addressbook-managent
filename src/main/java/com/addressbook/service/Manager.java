@@ -18,4 +18,6 @@ public interface Manager {
     boolean printingAddressBook() throws AddressBookException;
 
     boolean createEmptyFile(String fileName) throws AddressBookException;
+
+    boolean openingExistingFile(String fileName);
 }
