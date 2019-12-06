@@ -4,6 +4,7 @@ import com.addressbook.exception.AddressBookException;
 import com.addressbook.model.Person;
 import com.addressbook.service.AddressBookManager;
 import com.addressbook.service.Manager;
+import com.addressbook.util.Utility;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -55,13 +56,18 @@ public class JUnitAddressBookTestClass {
 
     @Test
     public void givenFileName_WhenCreatedSuccessfully_Should_ReturnTrue() throws AddressBookException {
-        boolean result=manager.createEmptyFile("Laxman" );
+        boolean result = manager.createEmptyFile("Laxman");
         Assert.assertTrue(result);
     }
 
     @Test
     public void givenFileName_WhenExist_Should_Open_And_ReturnTrue() {
-        boolean result=manager.openingExistingFile("Person.json");
+        boolean result = manager.openingExistingFile("Person.json");
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenFileName_When_OpenedAndEditedBeAbleToSave_Should_ReturnTrue() {
+        boolean result = manager.saveAddressBook(Utility.resourcePath + "Laxman.json");
     }
 }

@@ -130,4 +130,13 @@ public class AddressBookManager implements Manager {
         }
         return false;
     }
+
+    @Override
+    public boolean saveAddressBook(String fileName) {
+        List<Person> personList = Utility.getDummyRecord();
+        boolean result = Utility.writingAddressBookRecord(fileName, personList);
+        if (result)
+            return true;
+        return false;
+    }
 }

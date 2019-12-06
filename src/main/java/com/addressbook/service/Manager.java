@@ -20,4 +20,7 @@ public interface Manager {
     boolean createEmptyFile(String fileName) throws AddressBookException;
 
     boolean openingExistingFile(String fileName);
+
+    boolean saveAddressBook(String fileName);
+
 }
