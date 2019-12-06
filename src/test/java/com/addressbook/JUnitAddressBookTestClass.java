@@ -69,5 +69,11 @@ public class JUnitAddressBookTestClass {
     @Test
     public void givenFileName_When_OpenedAndEditedBeAbleToSave_Should_ReturnTrue() {
         boolean result = manager.saveAddressBook(Utility.resourcePath + "Laxman.json");
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    public void givenFileName_When_OpenedAndEdited_Should_BeAble_SaveAsWithNewName_Return_True() {
+
     }
 }

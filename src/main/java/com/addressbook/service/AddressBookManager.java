@@ -123,7 +123,6 @@ public class AddressBookManager implements Manager {
     @Override
     public boolean openingExistingFile(String fileName) {
         File file = new File(Utility.resourcePath + fileName);
-
         if (file.exists()) {
             Utility.readingAddressBook(Utility.resourcePath + fileName);
             return true;
@@ -137,6 +136,17 @@ public class AddressBookManager implements Manager {
         boolean result = Utility.writingAddressBookRecord(fileName, personList);
         if (result)
             return true;
+        return false;
+    }
+
+    @Override
+    public boolean saveAsAddressBook(String oldName, String newName) {
+        File oldFile = new File(Utility.resourcePath + oldName);
+        if (oldFile.exists()) {
+            File newFileName = new File(Utility.resourcePath + newName + ".json");
+            oldFile.renameTo(newFileName);
+            return true;
+        }
         return false;
     }
 }

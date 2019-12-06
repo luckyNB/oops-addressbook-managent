@@ -1,27 +1,35 @@
 [
   {
-    "firstName": "Shiva",
+    "firstName": "Laxman",
+    "lastName": "Bhosale",
+    "phoneNumber": "7030493048",
+    "city": "7030493048",
+    "zip": "431513",
+    "state": "MH"
+  },
+  {
+    "firstName": "Laxman",
+    "lastName": "Bhosale",
+    "phoneNumber": "7030493048",
+    "city": "7030493048",
+    "zip": "431513",
+    "state": "MH"
+  },
+  {
+    "firstName": "Rawan",
     "lastName": "Raj",
-    "phoneNumber": "9030493048",
-    "city": "Washim",
-    "zip": "13213",
-    "state": "MH"
+    "phoneNumber": "322312465",
+    "city": "Hingoli",
+    "zip": "2525254",
+    "state": "SL"
   },
   {
-    "firstName": "Laxman",
-    "lastName": "Bhosale",
-    "phoneNumber": "7030493048",
-    "city": "7030493048",
-    "zip": "431513",
-    "state": "MH"
-  },
-  {
-    "firstName": "Laxman",
-    "lastName": "Bhosale",
-    "phoneNumber": "7030493048",
-    "city": "7030493048",
-    "zip": "431513",
-    "state": "MH"
+    "firstName": "Rawan",
+    "lastName": "Raj",
+    "phoneNumber": "322312465",
+    "city": "Hingoli",
+    "zip": "2525254",
+    "state": "SL"
   },
   {
     "firstName": "Satya",
@@ -32,19 +40,19 @@
     "state": "MH"
   },
   {
+    "firstName": "Shiva",
+    "lastName": "Raj",
+    "phoneNumber": "9030493048",
+    "city": "Washim",
+    "zip": "13213",
+    "state": "MH"
+  },
+  {
     "firstName": "Tushar",
     "lastName": "Raj",
     "phoneNumber": "1030493048",
     "city": "Osmnanabad",
     "zip": "8552",
     "state": "MH"
-  },
-  {
-    "firstName": "Rawan",
-    "lastName": "Raj",
-    "phoneNumber": "322312465",
-    "city": "Hingoli",
-    "zip": "2525254",
-    "state": "SL"
   }
 ]
