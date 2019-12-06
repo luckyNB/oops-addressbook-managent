@@ -1,18 +1,21 @@
 package com.addressbook.service;
 
+import com.addressbook.exception.AddressBookException;
 import com.addressbook.model.Person;
-import com.google.gson.stream.MalformedJsonException;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 
 public interface Manager {
 
-    boolean addPerson(Person person,String filePath) throws FileNotFoundException;
-    boolean editPerson(Person person,String mobileNumber) throws FileNotFoundException;
-    boolean deletePerson(String mobileNumber) throws FileNotFoundException;
-    boolean sortingAddressBook(String sortingFieldName) throws FileNotFoundException;
+    boolean addPerson(Person person, String filePath) throws AddressBookException;
 
-    boolean printingAddressBook() throws FileNotFoundException;
+    boolean editPerson(Person person, String mobileNumber) throws AddressBookException;
+
+    boolean deletePerson(String mobileNumber) throws  AddressBookException;
+
+    boolean sortingAddressBook(String sortingFieldName) throws  AddressBookException;
+
+    boolean printingAddressBook() throws AddressBookException;
+
+    boolean createEmptyFile(String fileName) throws AddressBookException;
 }

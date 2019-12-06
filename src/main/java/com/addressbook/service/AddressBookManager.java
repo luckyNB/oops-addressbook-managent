@@ -1,9 +1,12 @@
 package com.addressbook.service;
 
+import com.addressbook.exception.AddressBookException;
 import com.addressbook.model.Person;
 import com.addressbook.util.Utility;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,17 +25,12 @@ public class AddressBookManager implements Manager {
 
     @Override
     public boolean addPerson(Person person, String path) {
-        try {
-            utility.writingPersonDetailsIntoJsonFile(person
-            );
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        utility.writingPersonDetailsIntoJsonFile(person);
         return true;
     }
 
     @Override
-    public boolean editPerson(Person person, String mobileNo) throws FileNotFoundException {
+    public boolean editPerson(Person person, String mobileNo) throws AddressBookException {
         int flag = 0;
         List<Person> personList = utility.readAllPersonsAddressList();
         for (Person editingPerson : personList) {
@@ -55,16 +53,21 @@ public class AddressBookManager implements Manager {
     }
 
     @Override
-    public boolean deletePerson(String mobileNumber) throws FileNotFoundException {
+    public boolean deletePerson(String mobileNumber) throws AddressBookException {
         int deletedFlag = 0;
-        List<Person> personList = utility.readAllPersonsAddressList();
-        for (Person person : personList) {
-            if (person.getPhoneNumber().equals(mobileNumber)) {
-                personList.remove(person);
-                utility.writingPersonDetailsIntoJsonFile(personList);
-                deletedFlag = 1;
-                break;
+        try {
+            List<Person> personList = utility.readAllPersonsAddressList();
+            for (Person person : personList) {
+                if (person.getPhoneNumber().equals(mobileNumber)) {
+                    personList.remove(person);
+                    utility.writingPersonDetailsIntoJsonFile(personList);
+                    deletedFlag = 1;
+                    break;
+                }
             }
+        } catch (AddressBookException e) {
+            e.printStackTrace();
+            throw new AddressBookException("Problem occured while removing person from list");
         }
         if (deletedFlag == 1)
             return true;
@@ -72,7 +75,7 @@ public class AddressBookManager implements Manager {
     }
 
     @Override
-    public boolean sortingAddressBook(String fieldName) throws FileNotFoundException {
+    public boolean sortingAddressBook(String fieldName) throws AddressBookException {
         List<Person> personList = utility.readAllPersonsAddressList();
         int sortedFlag = 0;
         Collections.sort(personList, new Comparator<Person>() {
@@ -96,9 +99,24 @@ public class AddressBookManager implements Manager {
     }
 
     @Override
-    public boolean printingAddressBook() throws FileNotFoundException {
+    public boolean printingAddressBook() {
         List<Person> personList = utility.readAllPersonsAddressList();
         personList.forEach(System.out::println);
         return true;
+    }
+
+    @Override
+    public boolean createEmptyFile(String fileName) throws AddressBookException {
+        try {
+            File file = new File(Utility.resouecePath + fileName + ".json");
+            if (file.createNewFile()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (IOException e) {
+            throw new AddressBookException("Problem occured while creating file");
+        }
+
     }
 }

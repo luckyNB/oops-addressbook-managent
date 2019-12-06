@@ -1,5 +1,6 @@
 package com.addressbook.util;
 
+import com.addressbook.exception.AddressBookException;
 import com.addressbook.model.Person;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utility {
+    public static final String resouecePath="/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/";
     public static final String FilePath = "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json";
     List<Person> personList = new ArrayList<>();
     Gson gson = new Gson();
@@ -20,7 +22,7 @@ public class Utility {
     }
 
 
-    public boolean writingPersonDetailsIntoJsonFile(Person person) throws FileNotFoundException {
+    public boolean writingPersonDetailsIntoJsonFile(Person person)   {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         readList();
         personList.add(person);
@@ -39,7 +41,7 @@ public class Utility {
         return false;
     }
 
-    public boolean writingPersonDetailsIntoJsonFile(List<Person> personList) throws FileNotFoundException {
+    public boolean writingPersonDetailsIntoJsonFile(List<Person> personList) throws AddressBookException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(personList);
         FileWriter fileWriter = null;
@@ -50,13 +52,14 @@ public class Utility {
             return true;
         } catch (IOException e) {
             e.printStackTrace();
+            throw  new AddressBookException("Problem occured while writing into file");
         }
 
-        return false;
+
     }
 
 
-    public boolean readList() throws FileNotFoundException {
+    public boolean readList(){
 
         for (int index = 0; index < personDetails.length; index++) {
             personList.add(personDetails[index]);
@@ -65,7 +68,7 @@ public class Utility {
         return true;
     }
 
-    public List<Person> readAllPersonsAddressList() throws FileNotFoundException {
+    public List<Person> readAllPersonsAddressList()   {
 
         for (int index = 0; index < personDetails.length; index++) {
             personList.add(personDetails[index]);
