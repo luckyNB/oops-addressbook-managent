@@ -8,10 +8,13 @@ import com.google.gson.GsonBuilder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utility {
     public static final String resourcePath = "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/";
     public static final String FilePath = "/home/admin1/IdeaProjects/oops-addressbook-mgmt/src/main/resources/Person.json";
+    static Pattern pattern = null;
     List<Person> personList = new ArrayList<>();
     Gson gson = new Gson();
     BufferedReader br = new BufferedReader(new FileReader(FilePath));
@@ -45,7 +48,7 @@ public class Utility {
 
     public static boolean writingAddressBookRecord(String fileName, List<Person> personList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-      //  personList.add(persons);
+        //  personList.add(persons);
         String json = gson.toJson(personList);
         FileWriter fileWriter = null;
         try {
@@ -58,6 +61,49 @@ public class Utility {
         }
 
         return false;
+    }
+
+    public  boolean validatePersonInfoDetails(Person person) throws AddressBookException {
+        int patternFlag=0;
+        pattern = pattern.compile("[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$");
+        Matcher matcher = pattern.matcher(person.getFirstName());
+        if (!matcher.matches()) {
+           patternFlag=1;
+           throw  new AddressBookException("Person validation error");
+        }
+        pattern = pattern.compile("[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$");
+         matcher = pattern.matcher(person.getLastName());
+        if (!matcher.matches()) {
+            patternFlag=1;
+            throw  new AddressBookException("Person validation error");
+        }
+        pattern = pattern.compile("^[0-9]{10}");
+         matcher = pattern.matcher(person.getPhoneNumber());
+        if (!matcher.matches()) {
+            patternFlag=1;
+            throw  new AddressBookException("Person validation error");
+        }
+        pattern = pattern.compile("^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$");
+        matcher = pattern.matcher(person.getCity());
+        if (!matcher.matches()) {
+            patternFlag=1;
+            throw  new AddressBookException("Person validation error");
+        }
+        pattern = pattern.compile("[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$");
+        matcher = pattern.matcher(person.getState());
+        if (!matcher.matches()) {
+            patternFlag=1;
+            throw  new AddressBookException("Person validation error");
+        }
+        pattern = pattern.compile("^[1-9]{6}");
+        matcher = pattern.matcher(person.getZip());
+        if (!matcher.matches()) {
+            patternFlag=1;
+            throw  new AddressBookException("Person validation error");
+        }
+
+        return true;
+
     }
 
     public boolean writingPersonDetailsIntoJsonFile(Person person) {
@@ -92,8 +138,6 @@ public class Utility {
             e.printStackTrace();
             throw new AddressBookException("Problem occured while writing into file");
         }
-
-
     }
 
     public boolean readList() {

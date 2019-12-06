@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class AddressBookManager implements Manager {
+public class AddressBookManager {
     Utility utility;
 
     {
@@ -23,15 +23,21 @@ public class AddressBookManager implements Manager {
         }
     }
 
-    @Override
-    public boolean addPerson(Person person, String path) {
+
+    public boolean addPerson(Person person, String path)throws AddressBookException {
+        boolean isValid=utility.validatePersonInfoDetails(person);
+        if (isValid)
         utility.writingPersonDetailsIntoJsonFile(person);
         return true;
     }
 
-    @Override
+
     public boolean editPerson(Person person, String mobileNo) throws AddressBookException {
         int flag = 0;
+        boolean isValid=utility.validatePersonInfoDetails(person);
+        if(!isValid){
+            throw new AddressBookException("Person validation error");
+        }
         List<Person> personList = utility.readAllPersonsAddressList();
         for (Person editingPerson : personList) {
             if (editingPerson.getPhoneNumber().equals(mobileNo)) {
@@ -49,10 +55,9 @@ public class AddressBookManager implements Manager {
         if (flag == 1) {
             return true;
         } else
-            return false;
+            throw  new AddressBookException("Persons Details unavailable");
     }
 
-    @Override
     public boolean deletePerson(String mobileNumber) throws AddressBookException {
         int deletedFlag = 0;
         try {
@@ -71,10 +76,11 @@ public class AddressBookManager implements Manager {
         }
         if (deletedFlag == 1)
             return true;
-        return false;
+        else
+            throw new AddressBookException("Person does not exists to delete");
     }
 
-    @Override
+
     public boolean sortingAddressBook(String fieldName) throws AddressBookException {
         List<Person> personList = utility.readAllPersonsAddressList();
         int sortedFlag = 0;
@@ -98,14 +104,13 @@ public class AddressBookManager implements Manager {
         return true;
     }
 
-    @Override
     public boolean printingAddressBook() {
         List<Person> personList = utility.readAllPersonsAddressList();
         personList.forEach(System.out::println);
         return true;
     }
 
-    @Override
+
     public boolean createEmptyFile(String fileName) throws AddressBookException {
         try {
             File file = new File(Utility.resourcePath + fileName + ".json");
@@ -120,7 +125,7 @@ public class AddressBookManager implements Manager {
 
     }
 
-    @Override
+
     public boolean openingExistingFile(String fileName) {
         File file = new File(Utility.resourcePath + fileName);
         if (file.exists()) {
@@ -130,7 +135,7 @@ public class AddressBookManager implements Manager {
         return false;
     }
 
-    @Override
+
     public boolean saveAddressBook(String fileName) {
         List<Person> personList = Utility.getDummyRecord();
         boolean result = Utility.writingAddressBookRecord(fileName, personList);
@@ -139,7 +144,7 @@ public class AddressBookManager implements Manager {
         return false;
     }
 
-    @Override
+
     public boolean saveAsAddressBook(String oldName, String newName) {
         File oldFile = new File(Utility.resourcePath + oldName);
         if (oldFile.exists()) {

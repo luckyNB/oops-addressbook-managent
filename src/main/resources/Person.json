@@ -1,26 +1,58 @@
 [
   {
-    "firstName": "Laxman",
-    "lastName": "Bhosale",
-    "phoneNumber": "7030493048",
-    "city": "7030493048",
-    "zip": "431513",
-    "state": "MH"
-  },
-  {
-    "firstName": "Laxman",
-    "lastName": "Bhosale",
-    "phoneNumber": "7030493048",
-    "city": "7030493048",
-    "zip": "431513",
-    "state": "MH"
-  },
-  {
-    "firstName": "Rawan",
+    "firstName": "",
     "lastName": "Raj",
-    "phoneNumber": "322312465",
-    "city": "Hingoli",
+    "phoneNumber": "5345345",
+    "city": "New York",
     "zip": "2525254",
+    "state": "SL"
+  },
+  {
+    "firstName": "",
+    "lastName": "Raj",
+    "phoneNumber": "5345345",
+    "city": "New York",
+    "zip": "2525254",
+    "state": "SL"
+  },
+  {
+    "firstName": "KansMama",
+    "lastName": "Raj",
+    "phoneNumber": "5345345",
+    "city": "New York",
+    "zip": "2525254",
+    "state": "SL"
+  },
+  {
+    "firstName": "KansMama",
+    "lastName": "Raj",
+    "phoneNumber": "5345345",
+    "city": "New York",
+    "zip": "2525254",
+    "state": "SL"
+  },
+  {
+    "firstName": "KansMama",
+    "lastName": "Raj",
+    "phoneNumber": "5345345",
+    "city": "New York",
+    "zip": "2525254",
+    "state": "SL"
+  },
+  {
+    "firstName": "Raja",
+    "lastName": "Bhosale",
+    "phoneNumber": "885956585",
+    "city": "Nanded",
+    "zip": "123123",
+    "state": "SL"
+  },
+  {
+    "firstName": "Raja",
+    "lastName": "Bhosale",
+    "phoneNumber": "885956585",
+    "city": "Nanded",
+    "zip": "123123",
     "state": "SL"
   },
   {
@@ -30,14 +62,6 @@
     "city": "Hingoli",
     "zip": "2525254",
     "state": "SL"
-  },
-  {
-    "firstName": "Satya",
-    "lastName": "Raj",
-    "phoneNumber": "8030493048",
-    "city": "Washim",
-    "zip": "789794",
-    "state": "MH"
   },
   {
     "firstName": "Shiva",

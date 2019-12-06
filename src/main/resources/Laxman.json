@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "Laxman",
+    "lastName": "Bhosale",
+    "phoneNumber": "70304960255",
+    "city": "Hingoli",
+    "zip": "431513",
+    "state": "MH"
+  },
+  {
+    "firstName": "Krishna",
+    "lastName": "Bhosale",
+    "phoneNumber": "7046660255",
+    "city": "Nanded",
+    "zip": "432513",
+    "state": "GJ"
+  },
+  {
+    "firstName": "Yogesh",
+    "lastName": "Mane",
+    "phoneNumber": "46613260255",
+    "city": "Satara",
+    "zip": "43153413",
+    "state": "KA"
+  }
+]

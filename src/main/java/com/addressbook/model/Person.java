@@ -1,11 +1,38 @@
 package com.addressbook.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class Person {
+    @NotNull(message = "firstName can not be null ")
+    @NotEmpty(message = "firstName can not be Empty")
+    @Pattern(regexp = "[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$")
     private String firstName;
+
+    @NotNull(message = "lastName can not be null ")
+    @NotEmpty(message = "lastName can not be Empty")
+    @Pattern(regexp = "[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$")
     private String lastName;
+
+    @NotNull(message = "mobileNo can not be null ")
+    @NotEmpty(message = "mobileNo can not be Empty")
+    @Pattern(regexp = "^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$\n")
     private String phoneNumber;
+
+    @NotNull(message = "city can not be null ")
+    @NotEmpty(message = "city can not be Empty")
+    @Pattern(regexp = "^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$")
     private String city;
+
+    @NotNull(message = "mobileNo can not be null ")
+    @NotEmpty(message = "mobileNo can not be Empty")
+    @Pattern(regexp = "^[1-9][0-9]{6}$\n")
     private String zip;
+
+    @NotNull(message = "mobileNo can not be null ")
+    @NotEmpty(message = "mobileNo can not be Empty")
+    @Pattern(regexp = "[A-Z][a-zA-Z][^#&<>\\\"~;$^%{}?]{1,20}$")
     private String state;
 
     public Person(String firstName, String lastName, String phoneNumber, String city, String zip, String state) {
