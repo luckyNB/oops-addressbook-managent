@@ -74,6 +74,7 @@ public class JUnitAddressBookTestClass {
 
     @Test
     public void givenFileName_When_OpenedAndEdited_Should_BeAble_SaveAsWithNewName_Return_True() {
-
+       boolean result= manager.saveAsAddressBook("Laxman.json", "Lucky.json");
+       Assert.assertTrue(result);
     }
 }
